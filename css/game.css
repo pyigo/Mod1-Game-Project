@@ -1,19 +1,68 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Playfair+Display&family=Squada+One&display=swap");
+/* * {
+  margin: 0;
+  padding: 0;
+  /* font-size: 62.5rem; */
+/* font-family: "Squada One", cursive;
+} */
+/* body {
+  box-sizing: border-box;
+} */
+/* .wrapper {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: url("../img/logo-millionaire.jpeg");
+  background-repeat: no-repeat;
+
+  /* background-size: 200vh; */
+/* background-size: contain;
+  color: whitesmoke; */
+/* background-size: contain; */
+/* } */
+:root {
+  background: url("../img/logo-millionaire.jpeg");
+  background-repeat: no-repeat;
+  background-size: 110%;
+}
+
 * {
-  font-family: "Squada One", cursive;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-size: 62.5rem;
-}
-.wrapper {
-  background: url("../img/logo-millionaire.jpeg");
-  background-repeat: no repeat;
-  background-size: contain;
+  color: whitesmoke;
+  font-family: "Squada One", cursive;
 }
 
-h1 {
-  font-size: 5.4rem;
-  color: #fff;
-  margin-bottom: 4rem;
+.choice-container {
+  display: flex;
+  margin-top: 0.8rem;
+  width: 100px;
+  border-radius: 4px;
+  background: rgb(18, 93, 225);
+  min-width: 80rem;
+
+  font-size: 3rem;
+  /* margin-bottom: 5rem; */
+}
+
+.choice-container:hover {
+  cursor: pointer;
+  box-shadow: 0 0.4rem 1.4rem 0 rgb(6, 103, 247 0.5);
+  transform: scale (1.02);
+  transform: trasform 100ms;
+}
+
+.wrapper {
+  width: 100vh;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 80rem;
+  margin: 0 auto;
+  /* padding: 2rem; */
+}
+
+@media screen and (min-max: 768px) {
 }

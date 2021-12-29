@@ -20,3 +20,8 @@ const game = {
         }
     ]
 };
+
+function playGame(round1) {
+    round1.label
+    console.log(round1);
+}
