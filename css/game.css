@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Playfair+Display&family=Squada+One&display=swap");
 
 :root {
-  background: url("../img/logo-millionaire.jpeg");
+  background: url("../img/bg-image.jpeg");
   /* background-repeat: no-repeat; */
   background-size: 110%;
 }
@@ -16,40 +16,7 @@
 
 .game-header {
   display: grid;
-  grid-template-columns: 1fr, 2fr, 1fr;
-  grid-template-rows: auto;
-  grid-template-areas: "a b c";
-  /* border: 20px solid #f76707; */
-  border-radius: 5px;
-  background-color: #fff4e6;
-}
-
-.game-header > div {
-  border: 2px solid #ffa94d;
-  border-radius: 5px;
-  background-color: #ffd8a8;
-  padding: 20px;
-  color: #d9480f;
-}
-/* .game-header {
-  display: grid;
-  grid-template-columns: 1fr, 2fr, 1fr;
-  grid-template-rows: 1fr;
-
-  grid-template-areas: "a b c";
-} */
-.item1 {
-  grid-area: a;
-  justify-self: start;
-  /* border: 10px; */
-}
-.item2 {
-  grid-area: b;
-  justify-self: stretch;
-}
-.item3 {
-  grid-area: c;
-  justify-self: end;
+  grid-template-columns: 1fr 2fr 1fr;
 }
 
 .question-container {
@@ -57,7 +24,8 @@
   margin-top: 0.8rem;
   width: 100px;
   border-radius: 4px;
-  background: rgb(18, 93, 225);
+  /* background: rgb(18, 93, 225); */
+  /* background: #0b1319; */
   min-width: 80rem;
   font-size: 3rem;
   /* margin-bottom: 5rem; */
@@ -72,23 +40,52 @@
 }
 
 .choice-container {
-  background: rgb(18, 93, 225);
+  /* background: rgb(18, 93, 225); */
+  background: #0b1319;
   border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 20px;
   font-size: 30px;
   text-align: center;
   border-radius: 4px;
 }
-/* .score-item {
-  background: rgb(208, 225, 18);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 5px;
+
+.choice-container-correct {
+  background: #0ebb0e;
+}
+.choice-container-wrong {
+  background: #e21111;
+}
+
+.score {
   font-size: 20px;
+  font-family: "Tahoma";
+  color: #e1a02e;
+  line-height: 22px;
+  margin-bottom: 8px;
+  padding: 0 10px 1px;
+  background: transparent;
+  width: 165px;
+}
+.score-line {
+  color: #fff;
+}
+.score-active {
+  font-weight: 700;
+  color: #fff;
+  background-image: url(../img/score_active.jpeg);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.number1 {
+  width: 30px;
+  margin-right: 5px;
+  display: inline-block;
   text-align: center;
-  font-weight: bold;
-  border-radius: 1px;
-  opacity: 0.5;
-} */
+}
+.score-active .number2 {
+  color: #000;
+  font-weight: 400;
+}
 
 .choice-container:hover {
   cursor: pointer;

@@ -2,86 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
+    <title>Home page</title>
     <link rel="stylesheet" href="./css/style.css" />
-    <title>Who wants to be a millionaire</title>
   </head>
-
   <body>
     <div class="container">
-      <div class="jumbotron mt-2">
-        <p class="lead text-center">
-          WELCOME FUTURE MILLIONAIRE PRESS START TO BEGIN
-        </p>
-        <div class="row">
-          <div class="col-6">
-            <div class="input-group flex-nowrap">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Username"
-                aria-label="Username"
-                aria-describedby="addon-wrapping"
-              />
-            </div>
-          </div>
-          <div class="col-6">
-            <button type="button" class="btn btn-primary">Start</button>
-          </div>
-        </div>
-      </div>
-      <div class="game">
-        <p class="lead text-right">Username</p>
-        <div class="row">
-          <div class="col-6 float-left">
-            <span>timer</span>
-          </div>
-          <!-- <div class="col-4">
-            <img
-              src="img/logo-millionaire.jpeg"
-              alt=""
-              width="800"
-              height="800"
-            />
-          </div> -->
-          <div class="col-6 float-right">
-            <ul>
-              <li>15</li>
-              <li>14</li>
-              <li>13</li>
-              <li>12</li>
-              <li>11</li>
-              <li>10</li>
-              <li>9</li>
-              <li>8</li>
-              <li>7</li>
-              <li>6</li>
-              <li>5</li>
-              <li>4</li>
-              <li>3</li>
-              <li>2</li>
-              <li>1</li>
-            </ul>
-          </div>
-        </div>
-        <div class="container">
-          <p class="lead" id="question-label">question label</p>
-          <div class="container">
-            <div class="row row-cols-2">
-              <div class="col">A.</div>
-              <div class="col">B.</div>
-              <div class="col">C.</div>
-              <div class="col">D.</div>
-            </div>
-          </div>
-        </div>
+      <div id="home" class="flex-column flex-center">
+        <h1>Welcome Future Millionaire Press start to Begin</h1>
+
+        <!-- <a href="./game.html" class="btn">Play</a> -->
+        <!-- <h2 id="end-text">Enter your name below to save your score!</h2> -->
+        <input
+          type="text"
+          name="name"
+          id="username"
+          placeholder="Enter your name"
+        />
+        <a href="./game.html" id="start-button" class="btn"
+          >START<i class="fas fa-crown"></i
+        ></a>
       </div>
     </div>
   </body>

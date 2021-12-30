@@ -10,69 +10,94 @@
   <body>
     <div class="wrapper">
       <div id="game" class="justify-center flex-column">
-        <!-- <div id="hud">
-          <div class="hud-item">
-            <p id="progressText" class="hud-prefix">Question</p>
-            <div id="progressBar">
-              <div id="progressBarFull"></div>
-            </div>
-          </div>
-          <div class="hud-item">
-            <p class="hud-prefix">Score</p>
-            <h1 class="hud-main-text" id="score">0</h1>
-          </div>
-        </div> -->
-
         <div class="game-header">
-          <div class="item1">Username</div>
-          <div class="item2">
-            <img
-              src="https://logos-download.com/wp-content/uploads/2016/09/Who_Wants_To_Be_A_Millionaire_logo_logotype.png"
-              alt="logo"
-              width="75%"
-            />
+          <div style="text-align: center">
+            <h1>Username</h1>
+            <h1>{{Name}}</h1>
           </div>
-          <div class="item3">
-            <ol>
-              <li class="score-item">15</li>
-              <li class="score-item">14</li>
-              <li class="score-item">13</li>
-              <li class="score-item">12</li>
-              <li class="score-item">11</li>
-              <li class="score-item">10</li>
-              <li class="score-item">9</li>
-              <li class="score-item">8</li>
-              <li class="score-item">7</li>
-              <li class="score-item">6</li>
-              <li class="score-item">5</li>
-              <li class="score-item">4</li>
-              <li class="score-item">3</li>
-              <li class="score-item">2</li>
-              <li class="score-item">1</li>
-            </ol>
+          <div style="text-align: center">
+            <img src="img/logo.jpeg" alt="logo" />
+          </div>
+          <div>
+            <div class="score score-line">
+              <span class="number1">15</span
+              ><span class="number2">$ 1 000 000</span>
+            </div>
+            <div class="score">
+              <span class="number1">14</span
+              ><span class="number2">$ 500 000</span>
+            </div>
+            <div class="score">
+              <span class="number1">13</span
+              ><span class="number2">$ 250 000</span>
+            </div>
+            <div class="score">
+              <span class="number1">12</span
+              ><span class="number2">$ 125 000</span>
+            </div>
+            <div class="score">
+              <span class="number1">11</span
+              ><span class="number2">$ 64 000</span>
+            </div>
+            <div class="score score_line">
+              <span class="number1">10</span
+              ><span class="number2">$ 32 000</span>
+            </div>
+            <div class="score">
+              <span class="number1">9</span
+              ><span class="number2">$ 16 000</span>
+            </div>
+            <div class="score">
+              <span class="number1">8</span><span class="number2">$ 8 000</span>
+            </div>
+            <div class="score">
+              <span class="number1">7</span><span class="number2">$ 4 000</span>
+            </div>
+            <div class="score">
+              <span class="number1">6</span><span class="number2">$ 2 000</span>
+            </div>
+            <div class="score score_line">
+              <span class="number1">5</span><span class="number2">$ 1 000</span>
+            </div>
+            <div class="score">
+              <span class="number1">4</span><span class="number2">$ 500</span>
+            </div>
+            <div class="score">
+              <span class="number1">3</span><span class="number2">$ 300</span>
+            </div>
+            <div class="score">
+              <span class="number1">2</span><span class="number2">$ 200</span>
+            </div>
+            <div class="score score-active" id="score1">
+              <span class="number1">1</span><span class="number2">$ 100</span>
+            </div>
           </div>
         </div>
 
-        <div class="question-container" id="question">
+        <div
+          class="question-container"
+          style="text-align: center"
+          id="question"
+        >
           This is question one This is question one This is question one This is
           question one This is question
         </div>
         <div class="parent-choice-container">
-          <div class="choice-container">
+          <div class="choice-container choice-container-correct">
             <p class="choice-prefix">A.</p>
-            <p class="choice-text" data-num="1">choice 1</p>
+            <p class="choice-text" data-num="1" id="choice1">choice 1</p>
           </div>
-          <div class="choice-container">
+          <div class="choice-container choice-container-wrong">
             <p class="choice-prefix">B.</p>
-            <p class="choice-text" data-num="2">choice 2</p>
+            <p class="choice-text" data-num="2" id="choice2">choice 2</p>
           </div>
           <div class="choice-container">
             <p class="choice-prefix">C.</p>
-            <p class="choice-text" data-num="3">choice 3</p>
+            <p class="choice-text" data-num="3" id="choice3">choice 3</p>
           </div>
           <div class="choice-container">
             <p class="choice-prefix">D.</p>
-            <p class="choice-text" data-num="4">choice 4</p>
+            <p class="choice-text" data-num="4" id="choice4">choice 4</p>
           </div>
         </div>
       </div>
