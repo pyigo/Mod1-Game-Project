@@ -19,9 +19,10 @@ const game = {
             answer: 0
         }
     ]
+
 };
 
-function playGame(round1) {
-    round1.label
-    console.log(round1);
-}
+// function playGame() {
+//     round1.label
+//     console.log(round1);
+// }

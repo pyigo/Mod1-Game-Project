@@ -1,28 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Playfair+Display&family=Squada+One&display=swap");
-/* * {
-  margin: 0;
-  padding: 0;
-  /* font-size: 62.5rem; */
-/* font-family: "Squada One", cursive;
-} */
-/* body {
-  box-sizing: border-box;
-} */
-/* .wrapper {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background: url("../img/logo-millionaire.jpeg");
-  background-repeat: no-repeat;
 
-  /* background-size: 200vh; */
-/* background-size: contain;
-  color: whitesmoke; */
-/* background-size: contain; */
-/* } */
 :root {
   background: url("../img/logo-millionaire.jpeg");
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   background-size: 110%;
 }
 
@@ -34,17 +14,81 @@
   font-family: "Squada One", cursive;
 }
 
-.choice-container {
+.game-header {
+  display: grid;
+  grid-template-columns: 1fr, 2fr, 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "a b c";
+  /* border: 20px solid #f76707; */
+  border-radius: 5px;
+  background-color: #fff4e6;
+}
+
+.game-header > div {
+  border: 2px solid #ffa94d;
+  border-radius: 5px;
+  background-color: #ffd8a8;
+  padding: 20px;
+  color: #d9480f;
+}
+/* .game-header {
+  display: grid;
+  grid-template-columns: 1fr, 2fr, 1fr;
+  grid-template-rows: 1fr;
+
+  grid-template-areas: "a b c";
+} */
+.item1 {
+  grid-area: a;
+  justify-self: start;
+  /* border: 10px; */
+}
+.item2 {
+  grid-area: b;
+  justify-self: stretch;
+}
+.item3 {
+  grid-area: c;
+  justify-self: end;
+}
+
+.question-container {
   display: flex;
   margin-top: 0.8rem;
   width: 100px;
   border-radius: 4px;
   background: rgb(18, 93, 225);
   min-width: 80rem;
-
   font-size: 3rem;
   /* margin-bottom: 5rem; */
 }
+
+.parent-choice-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  /* background-color: #2196f3; */
+  padding: 10px;
+  grid-gap: 10px;
+}
+
+.choice-container {
+  background: rgb(18, 93, 225);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 4px;
+}
+/* .score-item {
+  background: rgb(208, 225, 18);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 1px;
+  opacity: 0.5;
+} */
 
 .choice-container:hover {
   cursor: pointer;
