@@ -120,6 +120,7 @@ document.getElementById('choice1').addEventListener('click', function (event) {
 var questionObject;
 var limit = 3;
 var questionIndex = 0;
+var scoreIndex = 1;
 //get question object
 availableQuestion = (index) => {
     return questions[index];
@@ -130,8 +131,9 @@ startGame = () => {
     getNewQuestion(questionIndex);
 };
 
-getNewQuestion = (questionIndex) => {
-    questionObject = availableQuestion(questionIndex);
+getNewQuestion = (currentQuestionIndex) => {
+    console.log("new index:", currentQuestionIndex)
+    questionObject = availableQuestion(currentQuestionIndex);
 
     question.innerText = questionObject.label;
 
@@ -142,26 +144,73 @@ getNewQuestion = (questionIndex) => {
     });
 };
 
+setCurrentJackpot = () => {
+    const prevScoreDiv = document.querySelector(`[data-score-index="${scoreIndex}"]`);
+    prevScoreDiv.classList.remove("score-active");
+    scoreIndex += 1;
+    const nextScoreDiv = document.querySelector(`[data-score-index="${scoreIndex}"]`);
+    nextScoreDiv.classList.add("score-active");
+}
+
+showCorrectAnswer = (index) => {
+    const correctAnswer = document.querySelector(`[data-index="${index}"]`);
+    // display correct answer if wrong answer selected
+    correctAnswer.parentElement.classList.add("choice-container-correct")
+}
+
+removeCorrectAnswerClass = (index) => {
+    const correctAnswer = document.querySelector(`[data-index="${index}"]`)
+    // display correct answer if wrong answer selected
+    correctAnswer.parentElement.classList.remove("choice-container-correct")
+}
+
+
 choices.forEach((choice) => {
     choice.addEventListener("click", (event) => {
 
         const selectedChoice = event.target;
         const selectedIndex = selectedChoice.dataset['index'];
         console.log("You have selected:", selectedChoice.innerText)
-        console.log("tour response index:", selectedIndex)
-        console.log("correct answer:", questionObject.answer)
+        console.log("Your response index:", selectedIndex)
+        console.log("Correct answer:", questionObject.answer)
 
-        //compare indec to answer value ==> question.answer
-        if (selectedIndex == questionObject.answer) {
-            // chnage color to green
+        //compare index to answer value ==> question.answer
+        const isCorrect = selectedIndex == questionObject.answer;
+        if (isCorrect) {
+            // change color to green if correct answer
             selectedChoice.parentElement.classList.add("choice-container-correct")
+
+            //move jackpot up.
+            setCurrentJackpot();
+
         } else {
 
-            //change color to red
+            //change color to red if wrong answer
             selectedChoice.parentElement.classList.add("choice-container-wrong")
+            showCorrectAnswer(questionObject.answer)
+
+            limit--;
+            if (limit == 0) {
+                //end game
+                alert("You lost")
+            }
         }
 
+        setTimeout(() => {
+            console.log("isCorrect", isCorrect);
+            console.log("parent", selectedChoice);
+            if (isCorrect) {
+                selectedChoice.parentElement.classList.remove("choice-container-correct")
+            } else {
+                selectedChoice.parentElement.classList.remove("choice-container-wrong")
 
+                removeCorrectAnswerClass(questionObject.answer);
+            }
+
+            //remove wron and correct class 
+            questionIndex += 1;
+            getNewQuestion(questionIndex)
+        }, 1000)
     });
 });
 
