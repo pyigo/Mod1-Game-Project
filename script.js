@@ -188,8 +188,8 @@ setCurrentJackpot = () => {
         if (scoreIndex == 15) {
             //you won
             const message = `
-            <p>you won $1.000.000 </p>
-            <p>you are one of the rarest person to make it up here... </p>
+            <p>CONGRATULATIONS!!! You have won $1.000.000!!!</p>
+            <p>You are one of the rarest person to make it up here!!!</p>
             <p>score</p>
            <a href="index.html" id="start-button" class="btn"> Play again</a> `
 
@@ -215,8 +215,8 @@ removeCorrectAnswerClass = (index) => {
 
 endGame = () => {
 
-    const message = `  <p>you lost</p>
-                      <p>you will be luvky next time </p>
+    const message = `  <p>Oops! You lost!!!</p>
+                      <p>You will be lucky next time!!!</p>
                       <p>score</p>
                      <a href="index.html" id="start-button" class="btn">New game</a>`
     openModal(message);

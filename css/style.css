@@ -2,67 +2,85 @@
 * {
   font-family: "Squada One", cursive;
 }
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background: url("https://deadline.com/wp-content/uploads/2020/08/155372_6081.jpg");
-  background-repeat: no-repeat;
-  background-size: 200vh;
-} */
+:root {
+  background: url("../img/bg-image.jpeg");
+  background-size: 110%;
+}
 .game {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   background: url("../img/logo-millionaire.jpeg");
   background-repeat: no-repeat;
-  /* background-size: 200vh; */
   background-size: contain;
   color: whitesmoke;
 }
-.modal-overlay {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-/* modal prperties for game page */
-.modal-content {
-  background-color: #f4f4f4;
-  margin: 20% auto;
-  width: 70%;
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+.container {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  /* max-width: 80rem; */
 }
 
-.modal-header h2,
-.modal-footer h3 {
-  margin: 0;
+.btn {
+  font-size: 2.4rem;
+  padding: 2rem 0;
+  width: 30rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  /* color: rgb(28, 26, 26); */
+  background: linear-gradient(
+    90deg,
+    rgb(18, 92, 255) 0%,
+    rgb(0, 102, 255) 100%
+  );
+  border-radius: 4px;
 }
 
-.modal-header {
-  background: #1ce;
-  padding: 15px;
-  color: #fff;
+.btn:hover {
+  cursor: pointer;
+  box-shadow: 0 0.4rem 1.4rem 0 rgba(8, 114, 244, 0.6);
+  transition: transform 150ms;
+  transform: scale(1.03);
 }
 
-.modal-body {
-  padding: 10px 20px;
+.btn[disabled]:hover {
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
 }
 
-.modal-footer {
-  background: #1ce;
-  padding: 10px;
-  color: #fff;
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.text-center {
   text-align: center;
 }
 
-.closeBtn {
-  font-size: 30px;
-  color: #fff;
-  float: right;
+input {
+  margin-bottom: 1rem;
+  width: 20rem;
+  padding: 1.5rem;
+  font-size: 1.8rem;
+  border: none;
+  box-shadow: 0 0.1rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+}
+
+input::placeholder {
+  color: #aaa;
 }
