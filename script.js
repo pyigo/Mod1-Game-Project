@@ -1,6 +1,38 @@
 // create game object
 // create round objects
 // create questions objects with properties
+/**MODAL JS */
+// Get modal element
+var modal = document.getElementById('simpleModal');
+
+// Get close button
+var closeBtn = document.getElementsByClassName('closeBtn')[0];
+
+// Listen for close click
+closeBtn.addEventListener('click', closeModal);
+// Listen for outside click
+window.addEventListener('click', outsideClick);
+
+// Open modal
+function openModal(text) {
+    const modalBody = document.getElementById('modal-text');
+    modalBody.innerHTML = "";
+    modalBody.innerHTML = text;
+    modal.style.display = 'block';
+}
+
+// Close modal
+function closeModal() {
+    modal.style.display = 'none';
+}
+
+// Click outside and close
+function outsideClick(e) {
+    if (e.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+/**MODAL JS */
 const questions = [
     {
         label: "Who is the person responsible for writing code, who knows one or more programming languages (e.g., Java, C++, etc.)?",
@@ -121,6 +153,7 @@ var questionObject;
 var limit = 3;
 var questionIndex = 0;
 var scoreIndex = 1;
+var timeOut;
 //get question object
 availableQuestion = (index) => {
     return questions[index];
@@ -148,8 +181,24 @@ setCurrentJackpot = () => {
     const prevScoreDiv = document.querySelector(`[data-score-index="${scoreIndex}"]`);
     prevScoreDiv.classList.remove("score-active");
     scoreIndex += 1;
-    const nextScoreDiv = document.querySelector(`[data-score-index="${scoreIndex}"]`);
-    nextScoreDiv.classList.add("score-active");
+    if (scoreIndex <= 15) {
+        const nextScoreDiv = document.querySelector(`[data-score-index="${scoreIndex}"]`);
+        nextScoreDiv.classList.add("score-active");
+
+        if (scoreIndex == 15) {
+            //you won
+            const message = `
+            <p>you won $1.000.000 </p>
+            <p>you are one of the rarest person to make it up here... </p>
+            <p>score</p>
+           <a href="index.html" id="start-button" class="btn"> Play again</a> `
+
+            openModal(message);
+        }
+    }
+
+    //if 1m then you won...
+
 }
 
 showCorrectAnswer = (index) => {
@@ -164,6 +213,16 @@ removeCorrectAnswerClass = (index) => {
     correctAnswer.parentElement.classList.remove("choice-container-correct")
 }
 
+endGame = () => {
+
+    const message = `  <p>you lost</p>
+                      <p>you will be luvky next time </p>
+                      <p>score</p>
+                     <a href="index.html" id="start-button" class="btn">New game</a>`
+    openModal(message);
+    //stop timeout
+    clearTimeout(timeOut);
+}
 
 choices.forEach((choice) => {
     choice.addEventListener("click", (event) => {
@@ -192,11 +251,12 @@ choices.forEach((choice) => {
             limit--;
             if (limit == 0) {
                 //end game
-                alert("You lost")
+                endGame();
             }
         }
 
-        setTimeout(() => {
+
+        timeOut = setTimeout(() => {
             console.log("isCorrect", isCorrect);
             console.log("parent", selectedChoice);
             if (isCorrect) {
