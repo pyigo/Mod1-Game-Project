@@ -1,8 +1,9 @@
 // create game object
-// create round objects
 // create questions objects with properties
 /**MODAL JS */
 // Get modal element
+
+
 var modal = document.getElementById('simpleModal');
 
 // Get close button
@@ -12,6 +13,21 @@ var closeBtn = document.getElementsByClassName('closeBtn')[0];
 closeBtn.addEventListener('click', closeModal);
 // Listen for outside click
 window.addEventListener('click', outsideClick);
+
+
+// // Animation question
+// function animateIt() {
+//     menu.style.animation = 'fade 1s';
+//     setTimeout(function () {
+//         menu.style.animation = 'unset';
+//     }, 1000);
+// }
+// question - container.addEventListener('click', (e) => {
+//     animateIt();
+// });
+
+
+
 
 // Open modal
 function openModal(text) {
@@ -144,7 +160,7 @@ const questions = [
 const question = document.querySelector("#question");
 const choices = Array.from(document.querySelectorAll(".choice-text"));
 
-//disable clicks on chocie prefix and choice text
+//disable clicks on choice prefix and choice text
 document.getElementById('choice1').addEventListener('click', function (event) {
     event.stopPropagation();
 });
@@ -267,12 +283,14 @@ choices.forEach((choice) => {
                 removeCorrectAnswerClass(questionObject.answer);
             }
 
-            //remove wron and correct class 
+            //remove wrong and correct class 
             questionIndex += 1;
             getNewQuestion(questionIndex)
         }, 1000)
     });
 });
 
+
 //fire up the game
 startGame();
+const username = document.getElementById("username").value;
