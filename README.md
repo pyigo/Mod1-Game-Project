@@ -1,4 +1,5 @@
 # Mod1-Game-Project
+https://eloquent-leakey-946ba4.netlify.app
 This a class project to apply HTML,CSS,JS to build a game
 This assignment has helped me understand functions and the DOM manipulation. 
 I encountered difficulties while trying to get input username value from home page to game page
