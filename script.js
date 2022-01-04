@@ -3,7 +3,6 @@
 /**MODAL JS */
 // Get modal element
 
-
 var modal = document.getElementById('simpleModal');
 
 // Get close button
@@ -13,21 +12,6 @@ var closeBtn = document.getElementsByClassName('closeBtn')[0];
 closeBtn.addEventListener('click', closeModal);
 // Listen for outside click
 window.addEventListener('click', outsideClick);
-
-
-// // Animation question
-// function animateIt() {
-//     menu.style.animation = 'fade 1s';
-//     setTimeout(function () {
-//         menu.style.animation = 'unset';
-//     }, 1000);
-// }
-// question - container.addEventListener('click', (e) => {
-//     animateIt();
-// });
-
-
-
 
 // Open modal
 function openModal(text) {
@@ -121,11 +105,6 @@ const questions = [
         answer: 0
     },
     {
-        label: "Which of the following men does not have a chemical element named for him?",
-        responses: ["Niels Bohr", "Albert Einstein", "Isaac Newton", "Enrico Fermi"],
-        answer: 2
-    },
-    {
         label: "The person who has complete responsibility for the success of the project, and have accountability to the Stakeholders and Sponsors.",
         responses: ["Project Leader", "Project Manager", "System Analyst", "End User"],
         answer: 1
@@ -139,21 +118,6 @@ const questions = [
         label: "What is the type of Software Life Cycle Activity which involves testing the software in an environment that matches the operational environment. ?",
         responses: ["Acceptance testing", "System testing", "Unit testing", "Regression testing"],
         answer: 1
-    },
-    {
-        label: "What best-selling author was born Howard Allen O'Brien?",
-        responses: ["Danielle Steel", "Anne Rice", "J.K. Rowling", "Toni Morrison"],
-        answer: 1
-    },
-    {
-        label: "According to the United Nations, in what year was the world's population half of its present total?",
-        responses: ["1950", "1960", "1940", "1970"],
-        answer: 1
-    },
-    {
-        label: "People who have a marked physical reaction to beautiful art are said to suffer from what syndrome?",
-        responses: ["Jerusalem Syndrome", "Proust Syndrome", "Stendhal's Syndrome", "Beckett's Syndrome"],
-        answer: 2
     }
 ];
 
@@ -204,10 +168,12 @@ setCurrentJackpot = () => {
         if (scoreIndex == 15) {
             //you won
             const message = `
+            <img src="https://media0.giphy.com/media/SwmPjBifTij0S5kXMS/giphy.gif?cid=ecf05e47g3v9xaztvqfxsfwrt1l427upkhedxm72hjofzl2a&rid=giphy.gif&ct=s">
+            <img src="https://media3.giphy.com/media/5jT0jaNDsM6Ik7X9yq/200w.webp?cid=ecf05e47jz30mi8mbalm23ljdishiasxs7bnbfawj0uredz3&rid=200w.webp&ct=g">
             <p>CONGRATULATIONS!!! You have won $1.000.000!!!</p>
             <p>You are one of the rarest person to make it up here!!!</p>
-            <p>score</p>
-           <a href="index.html" id="start-button" class="btn"> Play again</a> `
+           <a href="index.html" id="start-button" class="btn"> Play again</a> 
+          `
 
             openModal(message);
         }
@@ -231,10 +197,11 @@ removeCorrectAnswerClass = (index) => {
 
 endGame = () => {
 
-    const message = `  <p>Oops! You lost!!!</p>
-                      <p>You will be lucky next time!!!</p>
-                      <p>score</p>
-                     <a href="index.html" id="start-button" class="btn">New game</a>`
+    const message = `<img src="https://media1.giphy.com/media/UHEqxUp1SLI3nqbCuB/200.webp?                  cid=ecf05e47kgsue0za9co99vmxzobo44avllb3elvmc7prdegd&rid=200.webp&ct=g">
+                    <p>Oops! You lost!!!</p>
+                    <p>You will be lucky next time!!!</p>
+                    <a href="index.html" id="start-button" class="btn">New game</a> 
+                     `
     openModal(message);
     //stop timeout
     clearTimeout(timeOut);

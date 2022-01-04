@@ -3,8 +3,7 @@
   font-family: "Squada One", cursive;
 }
 :root {
-  background: url("../img/bg-image.jpeg"),
-    url("https://media2.giphy.com/media/Y1S1SlDYc4oCthaBGW/200w.webp?cid=ecf05e47l2s758wh4r0lsve2qqknx7lxrtbuxrarbpadv5d3&rid=200w.webp&ct=s");
+  background: url("../img/bg-image.jpeg");
   background-size: 110%;
 }
 h1 {
@@ -37,7 +36,6 @@ h1 {
   text-align: center;
   margin-bottom: 1rem;
   text-decoration: none;
-  /* color: rgb(28, 26, 26); */
   background: linear-gradient(
     90deg,
     rgb(18, 92, 255) 0%,
@@ -88,4 +86,10 @@ input {
 
 input::placeholder {
   color: #aaa;
+}
+
+@media screen and (max-width: 768px) {
+  .choice-container {
+    min-width: 40rem;
+  }
 }
