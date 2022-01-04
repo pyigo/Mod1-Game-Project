@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Playfair+Display&family=Squada+One&display=swap");
 
-@keyframes fade {
+/* @keyframes fade {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
   }
-}
+} */
 
 :root {
   background: url("../img/bg-image.jpeg");

@@ -260,4 +260,3 @@ choices.forEach((choice) => {
 
 //fire up the game
 startGame();
-const username = document.getElementById("username").value;
